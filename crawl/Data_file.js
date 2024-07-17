@@ -49,86 +49,61 @@ const member_Data = [
     name: "정희경",
     page_id: "c0fd9a73-c580-4519-b2a0-61bf1ad59227",
   },
-  // {
-  //   boj_id: "ps3624",
-  //   name: "박진우",
-  //   page_id: "8c9cd9b8-cd46-4a0c-96fc-cfdcee4c848a",
-  // },
-  // {
-  //   boj_id: "hg1631",
-  //   name: "박평수",
-  //   page_id: "0698e638-a8ab-40a0-85dc-63b006b5f300",
-  // },
-  // {
-  //   boj_id: "jinwoo1142",
-  //   name: "방대성",
-  //   page_id: "14f71739-f1da-4654-8c40-2b556e4d8a8a",
-  // },
-  // {
-  //   boj_id: "bcgo99",
-  //   name: "고병찬",
-  //   page_id: "fecd1ac2-ad28-4312-956d-708c8bda6a83",
-  // },
-  // {
-  //   boj_id: "hykim1215",
-  //   name: "김하윤",
-  //   page_id: "aea50494-167d-4c37-9ad1-c409aea00da9",
-  // },
-  // {
-  //   boj_id: "jyjserial123",
-  //   name: "장연재",
-  //   page_id: "26c1f23b-9e87-4c02-9a66-3537fccfe1f7",
-  // },
-  // {
-  //   boj_id: "seyeon110",
-  //   name: "조세연",
-  //   page_id: "51a28f29-e057-4b2a-9e41-be769556f51b",
-  // },
-  // {
-  //   boj_id: "gimreuna",
-  //   name: "김진혁",
-  //   page_id: "c68e19fb-78a9-4dfb-adb0-9081e88bd0dd",
-  // },
-  // {
-  //   boj_id: "ce01067",
-  //   name: "이혁진",
-  //   page_id: "f046d094-a8fd-4384-8c3e-e0f6a5d349e6",
-  // },
-  // {
-  //   boj_id: "dlgurwls0529",
-  //   name: "김륜아",
-  //   page_id: "21866c46-ec16-433b-9923-0c5120b22309",
-  // },
-];
-
-//이번분기 처음 상태
-const quaterData = [
   {
-    boj_id: "opusdeisong",
-    name: "송우정",
-    solved: 1440,
-    rating: 1850,
+    boj_id: "ps3624",
+    name: "박진우",
+    page_id: "8c9cd9b8-cd46-4a0c-96fc-cfdcee4c848a",
+  },
+  {
+    boj_id: "hg1631",
+    name: "박평수",
+    page_id: "0698e638-a8ab-40a0-85dc-63b006b5f300",
+  },
+  {
+    boj_id: "jinwoo1142",
+    name: "방대성",
+    page_id: "14f71739-f1da-4654-8c40-2b556e4d8a8a",
+  },
+  {
+    boj_id: "bcgo99",
+    name: "고병찬",
+    page_id: "fecd1ac2-ad28-4312-956d-708c8bda6a83",
+  },
+  {
+    boj_id: "hykim1215",
+    name: "김하윤",
+    page_id: "aea50494-167d-4c37-9ad1-c409aea00da9",
+  },
+  {
+    boj_id: "jyjserial123",
+    name: "장연재",
+    page_id: "26c1f23b-9e87-4c02-9a66-3537fccfe1f7",
+  },
+  {
+    boj_id: "seyeon110",
+    name: "조세연",
+    page_id: "51a28f29-e057-4b2a-9e41-be769556f51b",
+  },
+  {
+    boj_id: "gimreuna",
+    name: "김진혁",
+    page_id: "c68e19fb-78a9-4dfb-adb0-9081e88bd0dd",
+  },
+  {
+    boj_id: "ce01067",
+    name: "이혁진",
+    page_id: "f046d094-a8fd-4384-8c3e-e0f6a5d349e6",
+  },
+  {
+    boj_id: "dlgurwls0529",
+    name: "김륜아",
+    page_id: "21866c46-ec16-433b-9923-0c5120b22309",
   },
 ];
 
-const hipe_Data = [
-  {
-    boj_id: "opusdeisong",
-    name: "송우정",
-    tier: "D5",
-    streak: "114일",
-    solved: 1440,
-
-    quarter_solved: 200, //이번분기동안 푼 문제
-    penalty: 1000,
-    paied: 1000,
-    rating: 1850,
-  },
-];
 const today_solved = [
   {
     boj_id: "opusdeisong",
-
     p_number: 10101,
     p_title: "하노이탑",
     tier: "Gold",

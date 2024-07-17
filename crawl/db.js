@@ -1,5 +1,29 @@
-const Data_File = require("./Data_file");
 const { findTier } = require("./util");
+const mysql = require("mysql2/promise");
+
+// 데이터베이스 연결 설정
+const pool = mysql.createPool({
+  host: "localhost",
+  user: "root",
+  password: "0000",
+  database: "HIPC",
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+});
+
+const add_to_newuser = async (data) => {
+  try {
+    const [rows] = await pool.execute(
+      'INSERT INTO tb_new_user (boj_id, rating, solve, tier) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE rating = ?, solve = ?, tier = ?',
+      [data.boj_id, data.rating, data.full_solved, data.tier, data.rating, data.full_solved, data.tier]
+    );
+    console.log(`User data added/updated for BOJ ID: ${data.boj_id}`);
+  } catch (error) {
+    console.error('Error adding user data to database:', error);
+  }
+};
+
 
 const add_to_user = (data) => {
   //유저에 넣는거..
@@ -26,4 +50,4 @@ const Add_not_solved = (boj_id) => {
   console.log(`${boj_id}님은 하나도 안풀었습니당`);
 };
 
-module.exports = { Add_to_solved, Add_not_solved, add_to_user };
+module.exports = { Add_to_solved, Add_not_solved, add_to_user, add_to_newuser };

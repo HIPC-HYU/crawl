@@ -43,17 +43,17 @@ const findTier = (n) => {
 
   switch (a) {
     case 0:
-      return `브론즈 ${b}`;
+      return `브론즈${b}`;
     case 1:
-      return `실버 ${b}`;
+      return `실버${b}`;
     case 2:
-      return `골드 ${b}`;
+      return `골드${b}`;
     case 3:
-      return `플래티넘 ${b}`;
+      return `플래티넘${b}`;
     case 4:
-      return `다이아 ${b}`;
+      return `다이아${b}`;
     case 5:
-      return `루비 ${b}`;
+      return `루비${b}`;
     default:
       return "Unknown";
   }

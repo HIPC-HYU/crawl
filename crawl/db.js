@@ -12,42 +12,61 @@ const pool = mysql.createPool({
   queueLimit: 0,
 });
 
-const add_to_newuser = async (data) => {
-  try {
-    const [rows] = await pool.execute(
-      'INSERT INTO tb_new_user (boj_id, rating, solve, tier) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE rating = ?, solve = ?, tier = ?',
-      [data.boj_id, data.rating, data.full_solved, data.tier, data.rating, data.full_solved, data.tier]
-    );
-    console.log(`User data added/updated for BOJ ID: ${data.boj_id}`);
-  } catch (error) {
-    console.error('Error adding user data to database:', error);
-  }
-};
+const add_to_state = (data) => {
+  //유저랑 분기 처음 상태 넣기 .. 이메일이랑 다 받은 다음에 해야하는데..?
 
-
-const add_to_user = (data) => {
-  //유저에 넣는거..
   console.log(data);
 };
 
-const Add_to_solved = ({ boj_id, solved }) => {
-  //푼거에 넣는거..
-  if (!Array.isArray(solved) || solved.length === 0) {
-    console.error("No solved problems to add.");
-    return;
-  }
-  solved.forEach(({ problemNumber, submissionTimestamp }) => {
-    console.log(
-      `이름:${boj_id}: 오늘 푼 문제 ${problemNumber} 티어:${findTier(
-        problemNumber
-      )} 시간: ${submissionTimestamp} \n`
+const erase_yesterday = async () => {
+  await pool.execute(
+   'TRUNCATE TABLE tb_problem'
+ )
+}
+
+const add_to_newstate = async (data) => {
+  try {
+    const [rows] = await pool.execute(
+      "INSERT INTO tb_newstate (boj_id, rating, solve, tier) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE rating = ?, solve = ?, tier = ?",
+      [
+        data.boj_id,
+        data.rating,
+        data.full_solved,
+        data.tier,
+        data.rating,
+        data.full_solved,
+        data.tier,
+      ]
     );
-  });
+    console.log(`User data added/updated for BOJ ID: ${data.boj_id}`);
+  } catch (error) {
+    console.error("Error adding user data to database:", error);
+  }
 };
 
-const Add_not_solved = (boj_id) => {
+const add_to_solve = async (boj_id, problemNumber, parsedTimestamp) => {
+  console.log(problemNumber,parsedTimestamp)
+  try {
+    const [rows] = await pool.execute(
+      "INSERT INTO tb_problem (boj_id, solved_num, time)  VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE boj_id = ?, solved_num = ?, time = ?",
+      [
+        boj_id,
+        parseInt(problemNumber),
+        parsedTimestamp,
+        boj_id,
+        parseInt(problemNumber),
+        parsedTimestamp,
+      ]
+    );
+    console.log(`오늘 푼 문제에 추가됨${boj_id}`);
+  } catch (error) {
+    console.log("추가하다가 error", error);
+  }
+};
+
+const add_to_notsolve = (boj_id) => {
   //안푼거에 넣는거...
   console.log(`${boj_id}님은 하나도 안풀었습니당`);
 };
 
-module.exports = { Add_to_solved, Add_not_solved, add_to_user, add_to_newuser };
+module.exports = { add_to_solve, erase_yesterday, add_to_notsolve, add_to_state, add_to_newstate };

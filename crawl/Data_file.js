@@ -1,113 +1,76 @@
 const member_Data = [
+  { boj_id: "hrgr0711", name: "최형락" },
   {
     boj_id: "opusdeisong",
     name: "송우정",
-    page_id: "2f18084c-9422-4b23-ae7d-f5f351820f10",
   },
   {
     boj_id: "hansoyo",
     name: "김진아",
-    page_id: "46a186c6-bf4e-4e6e-a75a-6ea56c4c9437",
   },
   {
     boj_id: "jrdora",
     name: "권기태",
-    page_id: "84a9441d-17f2-40e2-9c46-7a909ca9325a",
   },
   {
     boj_id: "ys10",
     name: "신윤수",
-    page_id: "27aa09dd-2c49-4e5e-b0dd-c9dab873e1f9",
   },
   {
     boj_id: "zxvm5962",
     name: "양병현",
-    page_id: "3be24ebe-3986-4098-abe5-8d5e034a6526",
   },
   {
     boj_id: "ryh1517",
     name: "배혜진",
-    page_id: "893b5669-fd32-4b2c-87be-ffb1b9ff4d31",
   },
   {
     boj_id: "koody1125",
     name: "구도영",
-    page_id: "dc81f2d3-4bac-4c98-b08b-ab091b24ab01",
   },
   {
     boj_id: "hy77097562",
     name: "홍현욱",
-    page_id: "9febb546-57f8-4caf-8086-18e1bf52a725",
   },
   {
     boj_id: "lhseo55",
     name: "이현서",
-    page_id: "d0dbf6b1-a91c-45ec-893b-a5c670f2d5f1",
   },
   {
     boj_id: "stefanob11",
     name: "정희경",
-    page_id: "c0fd9a73-c580-4519-b2a0-61bf1ad59227",
   },
   {
     boj_id: "ps3624",
     name: "박진우",
-    page_id: "8c9cd9b8-cd46-4a0c-96fc-cfdcee4c848a",
   },
   {
     boj_id: "hg1631",
     name: "박평수",
-    page_id: "0698e638-a8ab-40a0-85dc-63b006b5f300",
   },
   {
     boj_id: "jinwoo1142",
     name: "방대성",
-    page_id: "14f71739-f1da-4654-8c40-2b556e4d8a8a",
   },
   {
     boj_id: "bcgo99",
     name: "고병찬",
-    page_id: "fecd1ac2-ad28-4312-956d-708c8bda6a83",
   },
   {
     boj_id: "hykim1215",
     name: "김하윤",
-    page_id: "aea50494-167d-4c37-9ad1-c409aea00da9",
   },
   {
     boj_id: "jyjserial123",
     name: "장연재",
-    page_id: "26c1f23b-9e87-4c02-9a66-3537fccfe1f7",
   },
   {
     boj_id: "seyeon110",
     name: "조세연",
-    page_id: "51a28f29-e057-4b2a-9e41-be769556f51b",
   },
   {
     boj_id: "gimreuna",
     name: "김진혁",
-    page_id: "c68e19fb-78a9-4dfb-adb0-9081e88bd0dd",
-  },
-  {
-    boj_id: "ce01067",
-    name: "이혁진",
-    page_id: "f046d094-a8fd-4384-8c3e-e0f6a5d349e6",
-  },
-  {
-    boj_id: "dlgurwls0529",
-    name: "김륜아",
-    page_id: "21866c46-ec16-433b-9923-0c5120b22309",
-  },
-];
-
-const today_solved = [
-  {
-    boj_id: "opusdeisong",
-    p_number: 10101,
-    p_title: "하노이탑",
-    tier: "Gold",
-    time: "2024-07-06 17:05:20",
   },
 ];
 const tier_dicts = {
